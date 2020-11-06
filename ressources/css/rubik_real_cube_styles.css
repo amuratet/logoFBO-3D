@@ -45,8 +45,8 @@ div#laScene:hover div#leCube {
 div#face_avant {
     transition: 1s;
     transform: rotateY(0deg) translateZ(200px);
-    color: #660409;
-    text-shadow: 0 0 5px #660409;
+    color: #79090e;
+    text-shadow: 0 0 5px #79090e;
 }
 .menuAccueil {
     background-color: #bd2129;

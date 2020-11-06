@@ -30,6 +30,9 @@ body {
     height: 100vh;
 }
 /* ============================= Le logo, pas le sigle =================================== */
+h1 {
+    padding: 1em;
+}
 span.logoGroupeStyle{
     font: lighter small-caps 1.5em "ubuntu light", sans-serif, serif;
     color: #C0C9C6;
