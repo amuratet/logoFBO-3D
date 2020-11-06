@@ -34,13 +34,13 @@ h1 {
     padding: 1em;
 }
 span.logoGroupeStyle{
-    font: lighter small-caps 1.5em "ubuntu light", sans-serif, serif;
+    font: lighter small-caps 1em "ubuntu light", sans-serif, serif;
     color: #C0C9C6;
 }
 span.logoFboStyle {
     /* padding: 1em 0 0 1em; */
     /* text-align: center; */
-    font: bolder small-caps 1.5em "ubuntu regular", sans-serif, serif;
+    font: bolder small-caps 1em "ubuntu regular", sans-serif, serif;
     /* letter-spacing: 5px; */
     /* text-indent: 20%; */
     /* margin: 0 0 1em 0; */

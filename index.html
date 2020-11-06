@@ -39,7 +39,7 @@
                     <p>Recevoir</p>
                     <p>Demander</p>
                 </div> -->
-                “D'abord, résoud le problème. Puis écris le code.”<br>–&nbsp;John Johnson
+                <!-- “D'abord, résoud le problème. Puis écris le code.”<br>–&nbsp;John Johnson -->
             </div>
 
             <div id="face_arriere" class="fArriere menuAccueil">
@@ -66,7 +66,9 @@
         <!-- <script src="ressources/js/script.js"></script> -->
         
         <script type="text/javascript">
-            leCube.style.transform = "rotate3d(0, 1, 0, 20deg)";
+            leCube.style.transform = "rotate3d(0, 1, 0, 28deg)";
+            face_avant.style.width = "250px";
+            // face_avant.style.transform = "translate(500px, 0, 400px)";
             // ================================== TOUCHES POUR DIRECTION ============================================
             document.addEventListener('keydown', onYGo)
             function onYGo(ev) {
@@ -77,7 +79,6 @@
                 else if (ev.which === 40) {vaBas()}
         
             }
-            // ======================================================================================================
 
         /*================================================================================*/
 
@@ -86,17 +87,17 @@
         let positionActuelle = "centre"
         console.log("Position de départ : " + positionActuelle)
 
-        const goCenterFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 20deg)"; }
+        const goCenterFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 28deg)"; }
         // const goLeftFace = () => { leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
-        const goLeftFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 110deg)" }
+        const goLeftFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 118deg)" }
         // const goRightFace = () => { leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
-        const goRightFace = () => { leCube.style.transform = "rotate3d(0, -1, 0, 110deg"; }
+        const goRightFace = () => { leCube.style.transform = "rotate3d(0, -1, 0, 118deg"; }
         // const goUpFace = () => { leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)"; }
-        const goUpFace = () => { leCube.style.transform = "rotate3d(-1, 0, 0, 110deg)"; }
+        const goUpFace = () => { leCube.style.transform = "rotate3d(-1, 0, 0, 118deg)"; }
         // const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
-        const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0, 0, 110deg)"; }
+        const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0, 0, 118deg)"; }
         // const goRearFace = () => { leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)"; leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
-        const goRearFace = () => { leCube.style.transform = "rotate3d(1, 1, 0, 200deg)"; }
+        const goRearFace = () => { leCube.style.transform = "rotate3d(1, 1, 0, 208deg)"; }
 
 
         // depuis la position XX : direction nouvelle face (=dir) => YY  -  mouvement (=mvt) => goYY
@@ -110,24 +111,35 @@
             positionActuelle = toLeft[positionActuelle].dir// Ça fonctionne
             aGauche()
             console.log("direction gauche vers la position " + positionActuelle)
+            testPosition(positionActuelle)
         }
         function vaDroite() {
             var aDroite = toRight[positionActuelle].mvt
             positionActuelle = toRight[positionActuelle].dir
             aDroite()
             console.log("direction droite vers la position " + positionActuelle)
+            testPosition(positionActuelle)
         }
         function vaHaut() {
             var enHaut = toUp[positionActuelle].mvt
             positionActuelle = toUp[positionActuelle].dir
             enHaut()
             console.log("direction haut vers la position " + positionActuelle)
+            testPosition(positionActuelle)
         }
         function vaBas() {
             var enBas = toBottom[positionActuelle].mvt
             positionActuelle = toBottom[positionActuelle].dir
             enBas()
             console.log("direction bas vers la position " + positionActuelle)
+            testPosition(positionActuelle)
+        }
+        function testPosition(positionActuelle) {
+            if (positionActuelle == "centre") {
+                face_avant.style.width = "250px"
+            } else {
+                face_avant.style.width = "200px"
+            }
         }
 
 

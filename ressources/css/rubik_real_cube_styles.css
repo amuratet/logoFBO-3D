@@ -1,7 +1,7 @@
 div#laScene {
    
     margin: 0 auto;
-    perspective: 900px;
+    perspective: 500px;
     background-color: #272420;
     cursor: url(../cursors/rubik.png) 1 1, pointer;
 }
@@ -14,8 +14,8 @@ Animation cube with guys-links :hover
 
 div#leCube {
     border-radius: 10px;
-    width: 300px;
-    height: 500px;
+    width: 200px;
+    height: 400px;
     position: relative;
     transform-style: preserve-3d;
     transition: 1s;
@@ -30,8 +30,8 @@ div#leCube>div {
     border-radius: 5px;
     position: absolute;
     top: 100px;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     /* border: 2px solid #272420; */
     /* box-shadow: 0 0 10px #000; */
     box-shadow: 0 0 5px #272420 inset;
@@ -44,7 +44,7 @@ div#laScene:hover div#leCube {
 
 div#face_avant {
     transition: 1s;
-    transform: rotateY(0deg) translateZ(200px);
+    transform: rotateY(0deg) translateZ(160px);
     color: #79090e;
     text-shadow: 0 0 5px #79090e;
 }
@@ -87,7 +87,7 @@ PLACEMENTS FACES + IMAGES
 ========================================= */
 
 div#face_arriere {
-    transform: rotateY(180deg) translateZ(200px);
+    transform: rotateY(180deg) translateZ(160px);
 }
 .fArriere {
     background-color: #bd2129;
@@ -95,21 +95,21 @@ div#face_arriere {
 
 
 div#face_gauche {
-    transform: rotateY(-90deg) translateZ(200px);
+    transform: rotateY(-90deg) translateZ(160px);
 }
 .devon {
     background-color: #bd2129;
 }
 
 div#face_droite {
-    transform: rotateY(90deg) translateZ(200px);
+    transform: rotateY(90deg) translateZ(160px);
 }
 .cecile {
     background-color: #bd2129;
 }
 
 div#face_haut {
-    transform: rotateX(90deg) translateZ(200px);
+    transform: rotateX(90deg) translateZ(160px);
 }
 .morghan {
     background-color: #bd2129;
@@ -117,7 +117,7 @@ div#face_haut {
 
 
 div#face_bas {
-    transform: rotateX(-90deg) translateZ(200px);
+    transform: rotateX(-90deg) translateZ(160px);
 }
 .joyce {
     background-color: #bd2129;
