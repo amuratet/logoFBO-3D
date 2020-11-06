@@ -1,0 +1,124 @@
+div#laScene {
+   
+    margin: 0 auto;
+    perspective: 900px;
+    background-color: #272420;
+    cursor: url(../cursors/rubik.png) 1 1, pointer;
+}
+
+/* ==========================================
+Animation cube with guys-links :hover
+========================================== */
+
+
+
+div#leCube {
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 1s;
+    margin: 2em auto;
+}
+
+
+/* ==================================
+LES 6 FACES */
+div#leCube>div {
+    /* transition: 1s; */
+    border-radius: 5px;
+    position: absolute;
+    top: 100px;
+    width: 300px;
+    height: 300px;
+    /* border: 2px solid #272420; */
+    /* box-shadow: 0 0 10px #000; */
+    box-shadow: 0 0 5px #272420 inset;
+}
+div#laScene:hover div#leCube {
+    /* =====================================
+    ICI ANIM INFINITE ?
+    ===================================== */
+}
+
+div#face_avant {
+    transition: 1s;
+    transform: rotateY(0deg) translateZ(200px);
+    color: #660409;
+    text-shadow: 0 0 5px #660409;
+}
+.menuAccueil {
+    background-color: #bd2129;
+    font-size: 1.5em;
+    line-height: 2em;
+    padding: .5em;
+    /* color: #eee; */
+}
+.menuAccueil > .titreFaceMenu {
+    font: 1.5em "ubuntu light", sans-serif, serif;
+    letter-spacing: 2px;
+    padding: 0;
+    animation: letterSpacingH2 ease-in-out 5s infinite;
+    text-shadow: 2px 2px 2px black;
+}
+.menuAccueil .sousTitreFaceMenu {
+    font-size: .8em;
+    text-shadow: 0 0 0 10px #000;
+}
+.menuAccueil > .faceMenus {
+    display: flex; 
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.menuAccueil > .faceMenus p {
+    border-radius: .2em;
+    margin: .2em;
+    /* padding: 0 .2em; */
+    background-color: #bd2129;
+    text-align: center;
+    box-shadow: 0px 0px 20px #681217 inset;
+}
+
+ 
+
+/* =========================================
+PLACEMENTS FACES + IMAGES
+========================================= */
+
+div#face_arriere {
+    transform: rotateY(180deg) translateZ(200px);
+}
+.fArriere {
+    background-color: #bd2129;
+}
+
+
+div#face_gauche {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+.devon {
+    background-color: #bd2129;
+}
+
+div#face_droite {
+    transform: rotateY(90deg) translateZ(200px);
+}
+.cecile {
+    background-color: #bd2129;
+}
+
+div#face_haut {
+    transform: rotateX(90deg) translateZ(200px);
+}
+.morghan {
+    background-color: #bd2129;
+}
+
+
+div#face_bas {
+    transform: rotateX(-90deg) translateZ(200px);
+}
+.joyce {
+    background-color: #bd2129;
+}

@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "aguafina regular";
+    src: url("../fonts/AguafinaScript-Regular.ttf") format("opentype");
+}
+@font-face {
+    font-family: "ubuntu title";
+    /* src: url("fonts/ubuntu-title.ttf") format("opentype"); */
+    src: url("../fonts/ubuntu-title-fr-1.1.ttf") format("opentype");
+}
+@font-face {
+    font-family: "ubuntu light";
+    src: url("../fonts/Ubuntu-L.ttf") format("opentype");
+}
+@font-face {
+    font-family: "ubuntu regular";
+    src: url("../fonts/Ubuntu-R.ttf") format("opentype");
+}
+@font-face {
+    font-family: great-vibes;
+    src: url("../fonts/GreatVibes-Regular.otf");
+}
+body, nav, div, p, h1, h2, h3, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "ubuntu regular", sans-serif, serif;
+    background-color: #272420;
+    height: 100vh;
+}
+/* ============================= Le logo, pas le sigle =================================== */
+span.logoGroupeStyle{
+    font: lighter small-caps 1.5em "ubuntu light", sans-serif, serif;
+    color: #C0C9C6;
+}
+span.logoFboStyle {
+    /* padding: 1em 0 0 1em; */
+    /* text-align: center; */
+    font: bolder small-caps 1.5em "ubuntu regular", sans-serif, serif;
+    /* letter-spacing: 5px; */
+    /* text-indent: 20%; */
+    /* margin: 0 0 1em 0; */
+    /* animation: letterSpacingH2 ease-in-out 5s infinite; */
+    /* text-shadow: 2px 2px 2px #bd2129; */
+    color: #bd2129;
+}
+
+nav#accueil {
+    padding-left: 2%;
+    width: 60%;
+    margin: 0 auto;
+}
+@keyframes letterSpacingH2 {
+    0% {
+        letter-spacing: 5px;
+        color: #000;
+    }
+    50% {
+        letter-spacing: 5px;
+        color: #000;
+    }
+    65% {
+        letter-spacing: 5px;
+        color: rgb(16, 17, 94);
+        text-shadow: 2px 2px 2px rgb(61, 0, 131);
+    }
+    80% {
+        letter-spacing: 10px;
+        color: rgba(0, 0, 0, 0);
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
+    }
+    90% {
+        color: rgba(0, 0, 0, 0);
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
+    }
+    100% {
+        letter-spacing: 5px;
+        color: #000;
+    }
+}
