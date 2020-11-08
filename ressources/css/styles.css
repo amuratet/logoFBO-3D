@@ -4,7 +4,6 @@
 }
 @font-face {
     font-family: "ubuntu title";
-    /* src: url("fonts/ubuntu-title.ttf") format("opentype"); */
     src: url("../fonts/ubuntu-title-fr-1.1.ttf") format("opentype");
 }
 @font-face {
@@ -38,14 +37,8 @@ span.logoGroupeStyle{
     color: #C0C9C6;
 }
 span.logoFboStyle {
-    /* padding: 1em 0 0 1em; */
-    /* text-align: center; */
     font: bolder small-caps 1em "ubuntu regular", sans-serif, serif;
-    /* letter-spacing: 5px; */
-    /* text-indent: 20%; */
-    /* margin: 0 0 1em 0; */
-    /* animation: letterSpacingH2 ease-in-out 5s infinite; */
-    /* text-shadow: 2px 2px 2px #bd2129; */
+    animation: letterSpacingH2 ease-in-out 5s infinite;
     color: #bd2129;
 }
 
@@ -56,30 +49,25 @@ nav#accueil {
 }
 @keyframes letterSpacingH2 {
     0% {
-        letter-spacing: 5px;
-        color: #000;
+        padding-left: 0;
+        letter-spacing: normal;
     }
-    50% {
-        letter-spacing: 5px;
-        color: #000;
+    75% {
+        letter-spacing: normal;
+        padding-left: 0;
+        color: rgb(189, 33, 41);
     }
-    65% {
-        letter-spacing: 5px;
-        color: rgb(16, 17, 94);
-        text-shadow: 2px 2px 2px rgb(61, 0, 131);
-    }
-    80% {
-        letter-spacing: 10px;
+    89% {
+        padding-left: 7px;
+        letter-spacing: 7px;
         color: rgba(0, 0, 0, 0);
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
     }
     90% {
+        padding-left: 0;
+        letter-spacing: normal;
         color: rgba(0, 0, 0, 0);
-        letter-spacing: 5px;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
     }
     100% {
-        letter-spacing: 5px;
-        color: #000;
+        color: rgb(189, 33, 41);
     }
 }
