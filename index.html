@@ -1,200 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exo cube 1</title>
-    <link rel="stylesheet" type="text/css" href="ressources/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="ressources/css/rubik_real_cube_styles.css">
+    <link rel="stylesheet" type="text/css" href="ressources/css/styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="ressources/css/rubik_real_cube_styles.css"
+    />
     <!-- <script src="rubik_real_cube_js.js"></script> -->
-</head>
+  </head>
 
-<body>
+  <body>
 
-    <h1 class="titreAccueil"><span class="logoGroupeStyle">GROUPE</span><span class="logoFboStyle">FBO</span></h1>
+    <nav class="navBarStyle">
 
-    <div id="laScene">
+      <h3 class="logoNavbar">
+        <span class="logoGroupeStyle">GROUPE</span
+        ><span class="logoFboStyle">FBO</span>
+      </h3>
 
+      <h3 class="appliNom">U-swap</h3>
+
+      <div id="laScene">
         <div id="leCube">
-            <div id="face_avant" class="menuAccueil">
-                <!-- <p class="sousTitreFaceMenu">Savoir vivre, c'est savoir</p> -->
-                <!-- <div class="faceMenus">
-                    <p>Offrir</p>
-                    <p>Recevoir</p>
-                    <p>Demander</p>
-                </div> -->
-                <!-- “D'abord, résoud le problème. Puis écris le code.”<br>–&nbsp;John Johnson -->
-            </div>
-
-            <div id="face_arriere">
-            </div>
-
-            <div id="face_gauche">
-            </div>
-
-            <div id="face_droite">
-            </div>
-
-            <div id="face_haut">
-            </div>
-
-            <div id="face_bas">
-            </div>
-            
+          <div id="face_avant"></div>
+          <div id="face_arriere"></div>
+          <div id="face_gauche"></div>
+          <div id="face_droite"></div>
+          <div id="face_haut"></div>
+          <div id="face_bas"></div>
         </div>
-    </div>
-    <p style="font-size: .4em; text-align: right; padding: 2em;">_____/ petit<span
-        style="font-size: 1.2em;">©</span>hapeau \_____</p>
-        
-        
-        <!-- <script src="ressources/js/script.js"></script> -->
-        
-        <script type="text/javascript">
-            leCube.style.transform = "rotate3d(0, 1, 0, 28deg)";
-            face_avant.style.width = "250px";// alongement de la face pour resembler plus au logo original
-            // face_avant.style.transform = "translate(500px, 0, 400px)";
-            // ================================== TOUCHES POUR DIRECTION ============================================
-            document.addEventListener('keydown', onYGo)
-            function onYGo(ev) {
-                console.log(`touche enfoncée : ${ev.code}`)
-                if (ev.which == 37) {vaGauche()}
-                else if (ev.which === 39) {vaDroite()}
-                else if (ev.which === 38) {vaHaut()}
-                else if (ev.which === 40) {vaBas()}
-        
+      </div>
+
+    </nav>
+
+
+    <!-- <script src="ressources/js/script.js"></script> -->
+
+    <script type="text/javascript">
+      leCube.style.transform = "rotate3d(0, 1, 0, 28deg)";
+      face_avant.style.width = "250px"; // alongement de la face pour resembler plus au logo original
+      // face_avant.style.transform = "translate(500px, 0, 400px)";
+      // ================================== TOUCHES POUR DIRECTION ============================================
+      document.addEventListener("keydown", onYGo);
+      function onYGo(ev) {
+        console.log(`touche enfoncée : ${ev.code}`);
+        if (ev.which == 37) {
+          vaGauche();
+        } else if (ev.which === 39) {
+          vaDroite();
+        } else if (ev.which === 38) {
+          vaHaut();
+        } else if (ev.which === 40) {
+          vaBas();
+        }
+      }
+
+      /*================================================================================*/
+
+      // ================================ AVEC DES MOTS ==================================
+      let positionActuelle = "centre";
+      console.log("Position de départ : " + positionActuelle);
+
+      const goCenterFace = () => {
+        leCube.style.transform = "rotate3d(0, 1, 0, 28deg)";
+      };
+      // const goLeftFace = () => { leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
+      const goLeftFace = () => {
+        leCube.style.transform = "rotate3d(0, 1, 0, 118deg)";
+      };
+      // const goRightFace = () => { leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
+      const goRightFace = () => {
+        leCube.style.transform = "rotate3d(0, -1, 0, 118deg";
+      };
+      // const goUpFace = () => { leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)"; }
+      const goUpFace = () => {
+        leCube.style.transform = "rotate3d(-1, 0, 0, 118deg)";
+      };
+      // const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
+      const goBottomFace = () => {
+        leCube.style.transform = "rotate3d(1, 0, 0, 118deg)";
+      };
+      // const goRearFace = () => { leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)"; leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
+      const goRearFace = () => {
+        leCube.style.transform = "rotate3d(1, 1, 0, 208deg)";
+      };
+
+      // depuis la position XX : direction nouvelle face (=dir) => YY  -  mouvement (=mvt) => goYY
+      const toLeft = {
+        centre: { dir: "gauche", mvt: goLeftFace },
+        gauche: { dir: "arriere", mvt: goRearFace },
+        droite: { dir: "centre", mvt: goCenterFace },
+        haut: { dir: "gauche", mvt: goLeftFace },
+        bas: { dir: "gauche", mvt: goLeftFace },
+        arriere: { dir: "droite", mvt: goRightFace },
+      };
+      const toRight = {
+        centre: { dir: "droite", mvt: goRightFace },
+        gauche: { dir: "centre", mvt: goCenterFace },
+        droite: { dir: "arriere", mvt: goRearFace },
+        haut: { dir: "droite", mvt: goRightFace },
+        bas: { dir: "droite", mvt: goRightFace },
+        arriere: { dir: "gauche", mvt: goLeftFace },
+      };
+      const toUp = {
+        centre: { dir: "haut", mvt: goUpFace },
+        gauche: { dir: "haut", mvt: goUpFace },
+        droite: { dir: "haut", mvt: goUpFace },
+        haut: { dir: "arriere", mvt: goRearFace },
+        bas: { dir: "centre", mvt: goCenterFace },
+        arriere: { dir: "haut", mvt: goUpFace },
+      };
+      const toBottom = {
+        centre: { dir: "bas", mvt: goBottomFace },
+        gauche: { dir: "bas", mvt: goBottomFace },
+        droite: { dir: "bas", mvt: goBottomFace },
+        haut: { dir: "centre", mvt: goCenterFace },
+        bas: { dir: "arriere", mvt: goRearFace },
+        arriere: { dir: "bas", mvt: goBottomFace },
+      };
+
+      function vaGauche() {
+        var aGauche = toLeft[positionActuelle].mvt;
+        positionActuelle = toLeft[positionActuelle].dir; // Ça fonctionne
+        aGauche();
+        console.log("direction gauche vers la position " + positionActuelle);
+        testPosition(positionActuelle);
+      }
+      function vaDroite() {
+        var aDroite = toRight[positionActuelle].mvt;
+        positionActuelle = toRight[positionActuelle].dir;
+        aDroite();
+        console.log("direction droite vers la position " + positionActuelle);
+        testPosition(positionActuelle);
+      }
+      function vaHaut() {
+        var enHaut = toUp[positionActuelle].mvt;
+        positionActuelle = toUp[positionActuelle].dir;
+        enHaut();
+        console.log("direction haut vers la position " + positionActuelle);
+        testPosition(positionActuelle);
+      }
+      function vaBas() {
+        var enBas = toBottom[positionActuelle].mvt;
+        positionActuelle = toBottom[positionActuelle].dir;
+        enBas();
+        console.log("direction bas vers la position " + positionActuelle);
+        testPosition(positionActuelle);
+      }
+      function testPosition(positionActuelle) {
+        if (positionActuelle == "centre") {
+          face_avant.style.width = "250px";
+        } else {
+          face_avant.style.width = "200px";
+        }
+      }
+
+      window.addEventListener(
+        "load",
+        function () {
+          var el = document.getElementById("laScene");
+          // var inner = document.getElementById('inner')
+          var hidetimer = null;
+          swipedetect(el, function (swipedir) {
+            if (swipedir != "none") {
+              clearTimeout(hidetimer);
+              // var bgimage = swipedir + 'arrow.png' // naming convention is "leftarrow.png", "rightarrow.png" etc
+              // inner.style.background = 'transparent url(' + bgimage + ') center center no-repeat'
+              // hidetimer = setTimeout(function () { // reset background image after 1 second
+              //     inner.style.background = ''
+              // }, 1000)
             }
+          });
+        },
+        false
+      );
 
-        /*================================================================================*/
+      function swipedetect(el, callback) {
+        var touchsurface = el,
+          swipedir,
+          startX,
+          startY,
+          distX,
+          distY,
+          threshold = 100, //required min distance traveled to be considered swipe
+          restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+          allowedTime = 300, // maximum time allowed to travel that distance
+          elapsedTime,
+          startTime,
+          handleswipe = callback || function (swipedir) {};
 
+        touchsurface.addEventListener(
+          "touchstart",
+          function (e) {
+            var touchobj = e.changedTouches[0];
+            swipedir = "none";
+            dist = 0;
+            startX = touchobj.pageX;
+            startY = touchobj.pageY;
+            startTime = new Date().getTime(); // record time when finger first makes contact with surface
+            e.preventDefault();
+          },
+          false
+        );
 
-        // ================================ AVEC DES MOTS ==================================
-        let positionActuelle = "centre"
-        console.log("Position de départ : " + positionActuelle)
+        touchsurface.addEventListener(
+          "touchmove",
+          function (e) {
+            e.preventDefault(); // prevent scrolling when inside DIV
+          },
+          false
+        );
 
-        const goCenterFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 28deg)"; }
-        // const goLeftFace = () => { leCube.style.transform = "rotate3d(-0.1, 1, -0.1, 105deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
-        const goLeftFace = () => { leCube.style.transform = "rotate3d(0, 1, 0, 118deg)" }
-        // const goRightFace = () => { leCube.style.transform = "rotate3d(-0.15, -1, 0.15, 75deg)"; leCube.style.transform = "rotate3d(0, -1, 0, 90deg)  translateX(450px)"; }
-        const goRightFace = () => { leCube.style.transform = "rotate3d(0, -1, 0, 118deg"; }
-        // const goUpFace = () => { leCube.style.transform = "rotate3d(-1, -0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(-1, 0, 0, 90deg) translateY(-450px)"; }
-        const goUpFace = () => { leCube.style.transform = "rotate3d(-1, 0, 0, 118deg)"; }
-        // const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0.15, -0.15, 105deg)"; leCube.style.transform = "rotate3d(1, 0, 0, 90deg) translateY(450px)"; }
-        const goBottomFace = () => { leCube.style.transform = "rotate3d(1, 0, 0, 118deg)"; }
-        // const goRearFace = () => { leCube.style.transform = "rotate3d(-0, 1, -0.1, 195deg)"; leCube.style.transform = "rotate3d(0, 1, 0, 180deg) translateZ(-450px)"; }
-        const goRearFace = () => { leCube.style.transform = "rotate3d(1, 1, 0, 208deg)"; }
-
-
-        // depuis la position XX : direction nouvelle face (=dir) => YY  -  mouvement (=mvt) => goYY
-        const toLeft = { "centre": { dir: "gauche", mvt: goLeftFace }, "gauche": { dir: "arriere", mvt: goRearFace }, "droite": { dir: "centre", mvt: goCenterFace }, "haut": { dir: "gauche", mvt: goLeftFace }, "bas": { dir: "gauche", mvt: goLeftFace }, "arriere": { dir: "droite", mvt: goRightFace } }
-        const toRight = { "centre": {dir: "droite", mvt: goRightFace }, "gauche": { dir: "centre", mvt: goCenterFace }, "droite": { dir: "arriere", mvt: goRearFace }, "haut": { dir: "droite", mvt: goRightFace }, "bas": { dir: "droite", mvt: goRightFace }, "arriere": { dir: "gauche", mvt: goLeftFace } }
-        const toUp = { "centre": {dir: "haut", mvt: goUpFace }, "gauche": {dir: "haut", mvt: goUpFace }, "droite": {dir: "haut", mvt: goUpFace }, "haut": { dir: "arriere", mvt: goRearFace }, "bas": { dir: "centre", mvt: goCenterFace }, "arriere": {dir: "haut", mvt: goUpFace } }
-        const toBottom = { "centre": {dir: "bas", mvt: goBottomFace}, "gauche": {dir: "bas", mvt: goBottomFace}, "droite": {dir: "bas", mvt: goBottomFace}, "haut": { dir: "centre", mvt: goCenterFace }, "bas": { dir: "arriere", mvt: goRearFace }, "arriere": {dir: "bas", mvt: goBottomFace} }
-
-        function vaGauche() {
-            var aGauche = toLeft[positionActuelle].mvt
-            positionActuelle = toLeft[positionActuelle].dir// Ça fonctionne
-            aGauche()
-            console.log("direction gauche vers la position " + positionActuelle)
-            testPosition(positionActuelle)
-        }
-        function vaDroite() {
-            var aDroite = toRight[positionActuelle].mvt
-            positionActuelle = toRight[positionActuelle].dir
-            aDroite()
-            console.log("direction droite vers la position " + positionActuelle)
-            testPosition(positionActuelle)
-        }
-        function vaHaut() {
-            var enHaut = toUp[positionActuelle].mvt
-            positionActuelle = toUp[positionActuelle].dir
-            enHaut()
-            console.log("direction haut vers la position " + positionActuelle)
-            testPosition(positionActuelle)
-        }
-        function vaBas() {
-            var enBas = toBottom[positionActuelle].mvt
-            positionActuelle = toBottom[positionActuelle].dir
-            enBas()
-            console.log("direction bas vers la position " + positionActuelle)
-            testPosition(positionActuelle)
-        }
-        function testPosition(positionActuelle) {
-            if (positionActuelle == "centre") {
-                face_avant.style.width = "250px"
-            } else {
-                face_avant.style.width = "200px"
+        touchsurface.addEventListener(
+          "touchend",
+          function (e) {
+            var touchobj = e.changedTouches[0];
+            distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+            distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+            elapsedTime = new Date().getTime() - startTime; // get time elapsed
+            if (elapsedTime <= allowedTime) {
+              // first condition for awipe met
+              if (
+                Math.abs(distX) >= threshold &&
+                Math.abs(distY) <= restraint
+              ) {
+                // 2nd condition for horizontal swipe met
+                // swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+                swipedir = distX < 0 ? vaDroite() : vaGauche(); // if dist traveled is negative, it indicates left swipe
+              } else if (
+                Math.abs(distY) >= threshold &&
+                Math.abs(distX) <= restraint
+              ) {
+                // 2nd condition for vertical swipe met
+                swipedir = distY < 0 ? vaBas() : vaHaut(); // if dist traveled is negative, it indicates up swipe
+              }
             }
-        }
+            handleswipe(swipedir);
+            e.preventDefault();
+          },
+          false
+        );
+      }
 
-
-        window.addEventListener('load', function () {
-            var el = document.getElementById('laScene')
-            // var inner = document.getElementById('inner')
-            var hidetimer = null
-            swipedetect(el, function (swipedir) {
-                if (swipedir != 'none') {
-                    clearTimeout(hidetimer)
-                    // var bgimage = swipedir + 'arrow.png' // naming convention is "leftarrow.png", "rightarrow.png" etc
-                    // inner.style.background = 'transparent url(' + bgimage + ') center center no-repeat'
-                    // hidetimer = setTimeout(function () { // reset background image after 1 second
-                    //     inner.style.background = ''
-                    // }, 1000)
-                }
-            })
-        }, false)
-
-        function swipedetect(el, callback) {
-
-            var touchsurface = el,
-                swipedir,
-                startX,
-                startY,
-                distX,
-                distY,
-                threshold = 100, //required min distance traveled to be considered swipe
-                restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-                allowedTime = 300, // maximum time allowed to travel that distance
-                elapsedTime,
-                startTime,
-                handleswipe = callback || function (swipedir) { }
-
-            touchsurface.addEventListener('touchstart', function (e) {
-                var touchobj = e.changedTouches[0]
-                swipedir = 'none'
-                dist = 0
-                startX = touchobj.pageX
-                startY = touchobj.pageY
-                startTime = new Date().getTime() // record time when finger first makes contact with surface
-                e.preventDefault()
-            }, false)
-
-            touchsurface.addEventListener('touchmove', function (e) {
-                e.preventDefault() // prevent scrolling when inside DIV
-            }, false)
-
-            touchsurface.addEventListener('touchend', function (e) {
-                var touchobj = e.changedTouches[0]
-                distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-                distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-                elapsedTime = new Date().getTime() - startTime // get time elapsed
-                if (elapsedTime <= allowedTime) { // first condition for awipe met
-                    if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
-                        // swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-                        swipedir = (distX < 0) ? vaDroite() : vaGauche() // if dist traveled is negative, it indicates left swipe
-                    }
-                    else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
-                        swipedir = (distY < 0) ? vaBas() : vaHaut() // if dist traveled is negative, it indicates up swipe
-                    }
-                }
-                handleswipe(swipedir)
-                e.preventDefault()
-            }, false)
-        }
-
-        //USAGE:
-        /*
+      //USAGE:
+      /*
         var el = document.getElementById('someel')
         swipedetect(el, function(swipedir){
           swipedir contains either "none", "left", "right", "top", or "down"
@@ -202,13 +256,6 @@
               alert('You just swiped left!')
         })
         */
-
-
-
     </script>
-
-
-
-</body>
-
+  </body>
 </html>

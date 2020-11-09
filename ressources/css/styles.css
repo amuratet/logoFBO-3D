@@ -3,10 +3,6 @@
     src: url("../fonts/AguafinaScript-Regular.ttf") format("opentype");
 }
 @font-face {
-    font-family: "ubuntu title";
-    src: url("../fonts/ubuntu-title-fr-1.1.ttf") format("opentype");
-}
-@font-face {
     font-family: "ubuntu light";
     src: url("../fonts/Ubuntu-L.ttf") format("opentype");
 }
@@ -15,9 +11,11 @@
     src: url("../fonts/Ubuntu-R.ttf") format("opentype");
 }
 @font-face {
-    font-family: great-vibes;
-    src: url("../fonts/GreatVibes-Regular.otf");
+    font-family: "Redressed";
+    src: url("../fonts/Redressed.ttf") format("opentype");
 }
+
+/* ================ RESET CSS ================ */
 body, nav, div, p, h1, h2, h3, ul, li {
     margin: 0;
     padding: 0;
@@ -32,14 +30,30 @@ body {
 h1 {
     padding: 1em;
 }
+
+/* =============================== NAVBAR ============================= */
+nav.navBarStyle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
 span.logoGroupeStyle{
     font: lighter small-caps 1em "ubuntu light", sans-serif, serif;
     color: #C0C9C6;
 }
 span.logoFboStyle {
+    position: absolute;
     font: bolder small-caps 1em "ubuntu regular", sans-serif, serif;
-    animation: letterSpacingH2 ease-in-out 5s infinite;
+    animation: letterSpacingLogo ease-in-out 5s infinite;
     color: #bd2129;
+}
+nav .appliNom {
+    margin-left: 3em;
+    font: bolder small-caps 3em "aguafina regular", sans-serif, serif;
+    letter-spacing: .1em;
+    color: #C0C9C6;
 }
 
 nav#accueil {
@@ -47,7 +61,7 @@ nav#accueil {
     width: 60%;
     margin: 0 auto;
 }
-@keyframes letterSpacingH2 {
+@keyframes letterSpacingLogo {
     0% {
         padding-left: 0;
         letter-spacing: normal;
