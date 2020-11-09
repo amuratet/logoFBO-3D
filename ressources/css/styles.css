@@ -51,16 +51,34 @@ span.logoFboStyle {
 }
 nav .appliNom {
     margin-left: 3em;
-    font: bolder small-caps 3em "aguafina regular", sans-serif, serif;
-    letter-spacing: .1em;
+    font: small-caps 2em "ubuntu light", sans-serif, serif;
+    /* letter-spacing: .1em; */
     color: #C0C9C6;
 }
-
-nav#accueil {
-    padding-left: 2%;
-    width: 60%;
-    margin: 0 auto;
+nav .appliSwap {
+    font: bolder small-caps 1em "ubuntu regular", sans-serif, serif;
+    color: #bd2129;
 }
+
+nav .menuPicto a {
+    border-radius: 50%;
+}
+nav .menuPicto img{
+    width: 3em;
+}
+
+div.navBorderBottom {
+    height: 2px;
+    width: 50%;
+    margin: 0 auto;
+    background: linear-gradient(to right,#272420, #bd2129, #272420);
+}
+/* ====================== TESTS ========================== */
+.testCouleur {
+    height: 10em;
+    background-color: #272420;
+}
+
 @keyframes letterSpacingLogo {
     0% {
         padding-left: 0;

@@ -1,8 +1,12 @@
 div#laScene {
+  position: fixed;
+  top: -70px;
+  left: 10em;
   margin: 0 auto;
-  perspective: 500px;
+  perspective: 90px;
   background-color: #272420;
-  cursor: url(../cursors/rubik.png) 1 1, pointer;
+  width: 45px;
+  /* cursor: url(../cursors/rubik.png) 1 1, pointer; */
 }
 
 /* ==========================================
@@ -10,27 +14,29 @@ Animation cube with guys-links :hover
 ========================================== */
 
 div#leCube {
-  border-radius: 10px;
-  width: 200px;
-  height: 400px;
-  position: relative;
+  /* border-radius: 10px; */
+  width: 40px;
+  height: 235px;
+  /* position: relative; */
   transform-style: preserve-3d;
   transition: 1s;
-  margin: 2em auto;
+  background-color: rgba(0, 0, 0, 0);
+  /* margin: 2em auto; */
 }
 
 /* ==================================
 LES 6 FACES */
 div#leCube > div {
+  background-color: #bd2129;
   /* transition: 1s; */
-  border-radius: 5px;
+  border-radius: 1px;
   position: absolute;
   top: 100px;
-  width: 200px;
-  height: 200px;
-  /* border: 1px solid #272420; */
-  /* box-shadow: 0 0 10px #000; */
-  box-shadow: 0 0 5px #272420 inset;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #272420;
+  /* box-shadow: 0 0 5px #272420; */
+  box-shadow: 0 0 2px #272420 inset;
 }
 
 /* =========================================
@@ -38,39 +44,43 @@ div#leCube > div {
 ========================================= */
 div#face_avant {
   transition: 1s; /* Pour adoucir l'alongement de la face (cf index.html) */
-  transform: rotateY(0deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespireFaceAvant 5s normal infinite;
+  transform: rotateY(0deg) translateZ(27px);
+  /* animation: cubeRespireFaceAvant 5s normal infinite; */
   /* animation: cubeReforme 5s ease infinite; */
 }
 div#face_gauche {
-  transform: rotateY(-90deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespireFaceGauche 5s normal infinite;
+  transition: 1s;
+  transform: rotateY(-90deg) translateZ(27px);
+  /* background-color: #bd2129; */
+  /* animation: cubeRespireFaceGauche 5s normal infinite; */
   /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_droite {
-  transform: rotateY(90deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespireFaceDroite 5s infinite;
+  transition: 1s;
+  transform: rotateY(90deg) translateZ(27px);
+  /* background-color: #bd2129; */
+  /* animation: cubeRespireFaceDroite 5s infinite; */
   /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_haut {
-  transform: rotateX(90deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespireFaceHaut 5s infinite;
+  transition: 1s;
+  transform: rotateX(90deg) translateZ(27px);
+  /* background-color: #bd2129; */
+  /* animation: cubeRespireFaceHaut 5s infinite; */
   /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_bas {
-  transform: rotateX(-90deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespireFaceBas 5s infinite;
+  transition: 1s;
+  transform: rotateX(-90deg) translateZ(27px);
+  /* background-color: #bd2129; */
+  /* animation: cubeRespireFaceBas 5s infinite; */
   /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_arriere {
-  transform: rotateY(180deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespireFaceArriere 5s infinite;
+  transition: 1s;
+  transform: rotateY(180deg) translateZ(27px);
+  /* background-color: #bd2129; */
+  /* animation: cubeRespireFaceArriere 5s infinite; */
   /* animation: cubeReforme 15s ease infinite; */
 }
 
