@@ -1,4 +1,7 @@
 div#laScene {
+  position: fixed;
+  top: 100px;
+  left: 25%;
   margin: 0 auto;
   perspective: 500px;
   background-color: #272420;
@@ -23,49 +26,15 @@ div#leCube {
 LES 6 FACES */
 div#leCube > div {
   /* transition: 1s; */
+  background-color: #bd2129;
   border-radius: 5px;
   position: absolute;
   top: 100px;
   width: 200px;
   height: 200px;
-  /* border: 1px solid #272420; */
+  border: 1px solid #272420;
   /* box-shadow: 0 0 10px #000; */
   box-shadow: 0 0 5px #272420 inset;
-}
-div#laScene:hover div#leCube {
-  /* =====================================
-    ICI ANIM INFINITE ?
-    ===================================== */
-}
-
-.menuAccueil {
-  font-size: 1.5em;
-  line-height: 2em;
-  padding: 0.5em;
-  /* color: #eee; */
-}
-.menuAccueil > .titreFaceMenu {
-  font: 1.5em "ubuntu light", sans-serif, serif;
-  letter-spacing: 2px;
-  padding: 0;
-  /* animation: letterSpacingH2 ease-in-out 5s infinite; */
-  text-shadow: 2px 2px 2px black;
-}
-.menuAccueil .sousTitreFaceMenu {
-  font-size: 0.8em;
-  text-shadow: 0 0 0 10px #000;
-}
-.menuAccueil > .faceMenus {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-.menuAccueil > .faceMenus p {
-  border-radius: 0.2em;
-  margin: 0.2em;
-  /* padding: 0 .2em; */
-  text-align: center;
-  box-shadow: 0px 0px 20px #681217 inset;
 }
 
 /* =========================================
@@ -74,46 +43,52 @@ div#laScene:hover div#leCube {
 div#face_avant {
   transition: 1s; /* Pour adoucir l'alongement de la face (cf index.html) */
   transform: rotateY(0deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeRespire 5s normal infinite;
+  /* background-color: #bd2129; */
+  animation: cubeRespireFaceAvant 5s normal infinite;
   /* animation: cubeReforme 5s ease infinite; */
 }
 div#face_gauche {
+  transition: 1s;
   transform: rotateY(-90deg) translateZ(160px);
-  background-color: #bd2129;
-  animation: cubeReforme 15s ease infinite;
+  /* background-color: #bd2129; */
+  animation: cubeRespireFaceGauche 5s normal infinite;
+  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_droite {
+  transition: 1s;
   transform: rotateY(90deg) translateZ(160px);
-  background-color: #bd2129;
-  /* animation: cubeRespire 5s infinite; */
-  animation: cubeReforme 15s ease infinite;
+  /* background-color: #bd2129; */
+  animation: cubeRespireFaceDroite 5s infinite;
+  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_haut {
+  transition: 1s;
   transform: rotateX(90deg) translateZ(160px);
-  background-color: #bd2129;
-  /* animation: cubeRespire 5s infinite; */
-  animation: cubeReforme 15s ease infinite;
+  /* background-color: #bd2129; */
+  animation: cubeRespireFaceHaut 5s infinite;
+  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_bas {
+  transition: 1s;
   transform: rotateX(-90deg) translateZ(160px);
-  background-color: #bd2129;
-  /* animation: cubeRespire 5s infinite; */
-  animation: cubeReforme 15s ease infinite;
+  /* background-color: #bd2129; */
+  animation: cubeRespireFaceBas 5s infinite;
+  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_arriere {
+  transition: 1s;
   transform: rotateY(180deg) translateZ(160px);
-  background-color: #bd2129;
-  /* animation: cubeRespire 5s infinite; */
-  animation: cubeReforme 15s ease infinite;
+  /* background-color: #bd2129; */
+  animation: cubeRespireFaceArriere 5s infinite;
+  /* animation: cubeReforme 15s ease infinite; */
 }
 
 /* =========================================
     ANIMATION RESPIRATION CUBE
 ========================================= */
-@keyframes cubeRespire {
+@keyframes cubeRespireFaceAvant {
   0% {
-    transform: translateZ(160px);
+    transform:  translateZ(160px);
   }
   50% {
     transform: translateZ(160px);
@@ -131,11 +106,95 @@ div#face_arriere {
     transform: translateZ(160px);
   }
 }
+@keyframes cubeRespireFaceGauche {
+  0% {
+    transform: rotateY(-90deg)  translateZ(160px);
+  }
+  50% {
+    transform: rotateY(-90deg) translateZ(160px);
+  }
+  60% {
+    transform: rotateY(-90deg) translateZ(180px);
+  }
+  90% {
+    transform: rotateY(-90deg) translateZ(160px);
+  }
+  100% {
+    transform: rotateY(-90deg) translateZ(160px);
+  }
+}
+@keyframes cubeRespireFaceDroite {
+  0% {
+    transform: rotateY(90deg)  translateZ(160px);
+  }
+  50% {
+    transform: rotateY(90deg) translateZ(160px);
+  }
+  60% {
+    transform: rotateY(90deg) translateZ(180px);
+  }
+  90% {
+    transform: rotateY(90deg) translateZ(160px);
+  }
+  100% {
+    transform: rotateY(90deg) translateZ(160px);
+  }
+}
+@keyframes cubeRespireFaceHaut {
+  0% {
+    transform: rotateX(90deg)  translateZ(160px);
+  }
+  50% {
+    transform: rotateX(90deg) translateZ(160px);
+  }
+  60% {
+    transform: rotateX(90deg) translateZ(180px);
+  }
+  90% {
+    transform: rotateX(90deg) translateZ(160px);
+  }
+  100% {
+    transform: rotateX(90deg) translateZ(160px);
+  }
+}
+@keyframes cubeRespireFaceBas {
+  0% {
+    transform: rotateX(-90deg)  translateZ(160px);
+  }
+  50% {
+    transform: rotateX(-90deg) translateZ(160px);
+  }
+  60% {
+    transform: rotateX(-90deg) translateZ(180px);
+  }
+  90% {
+    transform: rotateX(-90deg) translateZ(160px);
+  }
+  100% {
+    transform: rotateX(-90deg) translateZ(160px);
+  }
+}
+@keyframes cubeRespireFaceArriere {
+  0% {
+    transform: rotateY(180deg) translateZ(160px);
+  }
+  50% {
+    transform: rotateY(180deg) translateZ(160px);
+  }
+  60% {
+    transform: rotateY(180deg) translateZ(180px);
+  }
+  90% {
+    transform: rotateY(180deg) translateZ(160px);
+  }
+  100% {
+    transform: rotateY(180deg) translateZ(160px);
+  }
+}
 @keyframes cubeReforme {
   0% {
     width: 200px;
     height: 200px;
-    /* background-color: #bd2129; */
   }
   73% {
     width: 200px;

@@ -18,6 +18,7 @@
     font-family: great-vibes;
     src: url("../fonts/GreatVibes-Regular.otf");
 }
+/* ================ RESET CSS ================ */
 body, nav, div, p, h1, h2, h3, ul, li {
     margin: 0;
     padding: 0;
@@ -29,25 +30,50 @@ body {
     height: 100vh;
 }
 /* ============================= Le logo, pas le sigle =================================== */
-h1 {
-    padding: 1em;
+/* =============================== NAVBAR ============================= */
+nav.navBarStyle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 1em; */
+    padding: 1em 5em;
 }
 span.logoGroupeStyle{
     font: lighter small-caps 1em "ubuntu light", sans-serif, serif;
     color: #C0C9C6;
 }
 span.logoFboStyle {
+    position: absolute;
     font: bolder small-caps 1em "ubuntu regular", sans-serif, serif;
-    animation: letterSpacingH2 ease-in-out 5s infinite;
+    animation: letterSpacingLogo ease-in-out 5s infinite;
     color: #bd2129;
 }
-
-nav#accueil {
-    padding-left: 2%;
-    width: 60%;
-    margin: 0 auto;
+nav .appliNom {
+    margin-left: 3em;
+    font: small-caps 2em "ubuntu light", sans-serif, serif;
+    /* letter-spacing: .1em; */
+    color: #bd2129;
 }
-@keyframes letterSpacingH2 {
+nav .appliSwap {
+    font: bolder small-caps 1em "ubuntu regular", sans-serif, serif;
+    color: #C0C9C6;
+}
+
+nav .menuPicto a {
+    border-radius: 50%;
+}
+nav .menuPicto img{
+    width: 3em;
+}
+
+div.navBorderBottom {
+    height: 2px;
+    width: 50%;
+    margin: 0 auto;
+    background: linear-gradient(to right,#272420, #bd2129, #272420);
+}
+@keyframes letterSpacingLogo {
     0% {
         padding-left: 0;
         letter-spacing: normal;
