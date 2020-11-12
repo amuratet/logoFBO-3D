@@ -3,7 +3,7 @@ div#laScene {
   top: 100px;
   left: 25%;
   margin: 0 auto;
-  perspective: 500px;
+  perspective: 230px;
   background-color: #272420;
   cursor: url(../cursors/rubik.png) 1 1, pointer;
 }
@@ -13,9 +13,9 @@ Animation cube with guys-links :hover
 ========================================== */
 
 div#leCube {
-  border-radius: 10px;
-  width: 200px;
-  height: 400px;
+  /* border-radius: 10px; */
+  width: 130px;
+  height: 330px;
   position: relative;
   transform-style: preserve-3d;
   transition: 1s;
@@ -30,11 +30,11 @@ div#leCube > div {
   border-radius: 5px;
   position: absolute;
   top: 100px;
-  width: 200px;
-  height: 200px;
-  border: 1px solid #272420;
+  width: 130px;
+  height: 130px;
+  border: 2px solid #272420;
   /* box-shadow: 0 0 10px #000; */
-  box-shadow: 0 0 5px #272420 inset;
+  box-shadow: 0 0 10px #272420 inset;
 }
 
 /* =========================================
@@ -42,45 +42,34 @@ div#leCube > div {
 ========================================= */
 div#face_avant {
   transition: 1s; /* Pour adoucir l'alongement de la face (cf index.html) */
-  transform: rotateY(0deg) translateZ(160px);
-  /* background-color: #bd2129; */
-  animation: cubeRespireFaceAvant 5s normal infinite;
+  transform: rotateY(0deg) translateZ(95px);
+  animation: cubeRespireFaceAvant 5s normal infinite, cubeClaicit 5s normal infinite;
   /* animation: cubeReforme 5s ease infinite; */
 }
 div#face_gauche {
   transition: 1s;
-  transform: rotateY(-90deg) translateZ(160px);
-  /* background-color: #bd2129; */
+  transform: rotateY(-90deg) translateZ(95px);
   animation: cubeRespireFaceGauche 5s normal infinite;
-  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_droite {
   transition: 1s;
-  transform: rotateY(90deg) translateZ(160px);
-  /* background-color: #bd2129; */
+  transform: rotateY(90deg) translateZ(95px);
   animation: cubeRespireFaceDroite 5s infinite;
-  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_haut {
   transition: 1s;
-  transform: rotateX(90deg) translateZ(160px);
-  /* background-color: #bd2129; */
+  transform: rotateX(90deg) translateZ(95px);
   animation: cubeRespireFaceHaut 5s infinite;
-  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_bas {
   transition: 1s;
-  transform: rotateX(-90deg) translateZ(160px);
-  /* background-color: #bd2129; */
+  transform: rotateX(-90deg) translateZ(95px);
   animation: cubeRespireFaceBas 5s infinite;
-  /* animation: cubeReforme 15s ease infinite; */
 }
 div#face_arriere {
   transition: 1s;
-  transform: rotateY(180deg) translateZ(160px);
-  /* background-color: #bd2129; */
+  transform: rotateY(180deg) translateZ(95px);
   animation: cubeRespireFaceArriere 5s infinite;
-  /* animation: cubeReforme 15s ease infinite; */
 }
 
 /* =========================================
@@ -88,137 +77,125 @@ div#face_arriere {
 ========================================= */
 @keyframes cubeRespireFaceAvant {
   0% {
-    transform:  translateZ(160px);
+    transform:  translateZ(95px);
   }
   50% {
-    transform: translateZ(160px);
+    transform: translateZ(95px);
   }
   60% {
-    transform: translateZ(180px);
+    transform: translateZ(105px);
   }
   /* 65% {
-    transform: translateZ(180px);
+    transform: translateZ(105px);
   } */
   90% {
-    transform: translateZ(160px);
+    transform: translateZ(95px);
   }
   100% {
-    transform: translateZ(160px);
+    transform: translateZ(95px);
   }
 }
 @keyframes cubeRespireFaceGauche {
   0% {
-    transform: rotateY(-90deg)  translateZ(160px);
+    transform: rotateY(-90deg)  translateZ(95px);
   }
   50% {
-    transform: rotateY(-90deg) translateZ(160px);
+    transform: rotateY(-90deg) translateZ(95px);
   }
   60% {
-    transform: rotateY(-90deg) translateZ(180px);
+    transform: rotateY(-90deg) translateZ(105px);
   }
   90% {
-    transform: rotateY(-90deg) translateZ(160px);
+    transform: rotateY(-90deg) translateZ(95px);
   }
   100% {
-    transform: rotateY(-90deg) translateZ(160px);
+    transform: rotateY(-90deg) translateZ(95px);
   }
 }
 @keyframes cubeRespireFaceDroite {
   0% {
-    transform: rotateY(90deg)  translateZ(160px);
+    transform: rotateY(90deg)  translateZ(95px);
   }
   50% {
-    transform: rotateY(90deg) translateZ(160px);
+    transform: rotateY(90deg) translateZ(95px);
   }
   60% {
-    transform: rotateY(90deg) translateZ(180px);
+    transform: rotateY(90deg) translateZ(105px);
   }
   90% {
-    transform: rotateY(90deg) translateZ(160px);
+    transform: rotateY(90deg) translateZ(95px);
   }
   100% {
-    transform: rotateY(90deg) translateZ(160px);
+    transform: rotateY(90deg) translateZ(95px);
   }
 }
 @keyframes cubeRespireFaceHaut {
   0% {
-    transform: rotateX(90deg)  translateZ(160px);
+    transform: rotateX(90deg)  translateZ(95px);
   }
   50% {
-    transform: rotateX(90deg) translateZ(160px);
+    transform: rotateX(90deg) translateZ(95px);
   }
   60% {
-    transform: rotateX(90deg) translateZ(180px);
+    transform: rotateX(90deg) translateZ(105px);
   }
   90% {
-    transform: rotateX(90deg) translateZ(160px);
+    transform: rotateX(90deg) translateZ(95px);
   }
   100% {
-    transform: rotateX(90deg) translateZ(160px);
+    transform: rotateX(90deg) translateZ(95px);
   }
 }
 @keyframes cubeRespireFaceBas {
   0% {
-    transform: rotateX(-90deg)  translateZ(160px);
+    transform: rotateX(-90deg)  translateZ(95px);
   }
   50% {
-    transform: rotateX(-90deg) translateZ(160px);
+    transform: rotateX(-90deg) translateZ(95px);
   }
   60% {
-    transform: rotateX(-90deg) translateZ(180px);
+    transform: rotateX(-90deg) translateZ(105px);
   }
   90% {
-    transform: rotateX(-90deg) translateZ(160px);
+    transform: rotateX(-90deg) translateZ(95px);
   }
   100% {
-    transform: rotateX(-90deg) translateZ(160px);
+    transform: rotateX(-90deg) translateZ(95px);
   }
 }
 @keyframes cubeRespireFaceArriere {
   0% {
-    transform: rotateY(180deg) translateZ(160px);
+    transform: rotateY(180deg) translateZ(95px);
   }
   50% {
-    transform: rotateY(180deg) translateZ(160px);
+    transform: rotateY(180deg) translateZ(95px);
   }
   60% {
-    transform: rotateY(180deg) translateZ(180px);
+    transform: rotateY(180deg) translateZ(105px);
   }
   90% {
-    transform: rotateY(180deg) translateZ(160px);
+    transform: rotateY(180deg) translateZ(95px);
   }
   100% {
-    transform: rotateY(180deg) translateZ(160px);
+    transform: rotateY(180deg) translateZ(95px);
   }
 }
-@keyframes cubeReforme {
+/* ============================================================== */
+@keyframes cubeClaicit {
   0% {
-    width: 200px;
-    height: 200px;
+    background-color: rgba(189, 33, 41, 1);
   }
-  73% {
-    width: 200px;
-    height: 200px;
-    background-color: #bd2129;
+  50% {
+    background-color: rgba(189, 33, 41, 1);
   }
-  80% {
-    width: 320px;
-    height: 320px;
-    background-color: #a71017;
+  60% {
+    background-color: rgba(189, 33, 41, .7);
   }
-  83% {
-    width: 320px;
-    height: 320px;
-    background-color: #a71017;
-  }
-  95% {
-    width: 200px;
-    height: 200px;
-    background-color: #bd2129;
+  90% {
+    background-color: rgba(189, 33, 41, 1);
   }
   100% {
-    width: 200px;
-    height: 200px;
-    /* background-color: #bd2129; */
+    background-color: rgba(189, 33, 41, 1);
   }
 }
+
