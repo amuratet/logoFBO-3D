@@ -37,7 +37,7 @@ nav.navBarStyle {
     justify-content: space-between;
     align-items: center;
     /* padding: 1em; */
-    padding: 1em 5em;
+    padding: 1em 3em;
 }
 span.logoGroupeStyle{
     font: lighter small-caps 1em "ubuntu light", sans-serif, serif;
@@ -50,7 +50,7 @@ span.logoFboStyle {
     color: #bd2129;
 }
 nav .appliNom {
-    margin-left: 3em;
+    /* margin-left: 3em; */
     font: small-caps 2em "ubuntu light", sans-serif, serif;
     /* letter-spacing: .1em; */
     color: #bd2129;
